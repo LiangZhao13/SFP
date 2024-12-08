@@ -15,31 +15,37 @@ import attr
     
 @attr.s(frozen=True, auto_attribs=True)
 class ShipParam(object):
+    # 几何参数
     Lwl: float = 235
     Lpp: float = 230.4
-    B: float = 41.5
+    B: float = 41.5 # 水线宽度B_wl?
+    Awl: float = 9561.6 # 截面面积，需要
+    Vol: float = 105000  # displacement volume？ 需要
+
     # hull coefficients
-    Cp: float = 0.8467 #需要
-    Cm: float = 0.99 #需要
-    C_B: float = 0.8219 #需要
-    C_wp: float = 0.91 #C_wl, 需要
-    L_CB: float = -0.75
-    T: float = 13.1
-    Tf: float = 13.1
-    Ss: float = 13682
+    Cp: float = 0.8467 #知道C_B和C_wp后可算
+    Cm: float = 0.99 # 知道A_m后可算
+    C_B: float = 0.8219 #可算
+    C_wp: float = 0.91 #C_wl, 可算
+    L_CB: float = -0.75 # 纵向浮心位置，需要
+
+    #吃水
+    T: float = 13.1 # 吃水
+    Tf: float = 13.1 # forward draught，与吃水应该应该大致一样
+    
+    Ss: float = 13682 # full scale wetted surface，
     ks: float = 150 * 10 ** - 6
-    Vol: float = 105000
+
     g: float = 9.81
     A_bt: float = 30.8
     hb: float = 4
-    C_stern: float = 10
+    C_stern: float = 10 # 根据具体船型取值
     k2: float = 1.5
     transom_a: float = 42.6
     i_E: float = 5.0
 
     Sapp: float = 50
     I: float = 14762925
-    Awl: float = 9561.6
     kyy: float = 60.2966
     A_transverse: float = 41*5 #如何取值
     # A_M:float= 200 #the midship section area under water m2
