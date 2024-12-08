@@ -269,10 +269,10 @@ def speed_to_power(v, heading_ship,h_waterdepth,
 
     r_total = (r_calm) / 1000
     # r_total=r_calm/1000
-    etaR = 1.0
-    etaO = 0.52
-    etaS = 0.99
-    etaH = 1.45
+    etaR = 1.0 # 准确计算较复杂，但整体波动小，经验值是1-1.07或者0.98
+    etaO = 0.52 # 可以算，但需要知道V_A和thruster force T的具体意义，经验值0.55-0.7
+    etaS = 0.99 # 无计算公式，取经验值，0.99，0.98，0.95-0.96三种情况
+    etaH = 1.45 # 要计算t, w，1-t/1-w,需要知道力和速度的关系。
 
     P_eff  = r_total * V_water
     P_shaft = P_eff / (etaR * etaO * etaS * etaH)
