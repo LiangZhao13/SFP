@@ -18,10 +18,11 @@ class ShipParam(object):
     Lwl: float = 235
     Lpp: float = 230.4
     B: float = 41.5
-    Cp: float = 0.8467
-    Cm: float = 0.99
-    C_B: float = 0.8219
-    C_wp: float = 0.91
+    # hull coefficients
+    Cp: float = 0.8467 #需要
+    Cm: float = 0.99 #需要
+    C_B: float = 0.8219 #需要
+    C_wp: float = 0.91 #C_wl, 需要
     L_CB: float = -0.75
     T: float = 13.1
     Tf: float = 13.1
