@@ -33,20 +33,20 @@ class ShipParam(object):
     T: float = 13.1 # 吃水
     Tf: float = 13.1 # forward draught，与吃水应该应该大致一样
     
-    Ss: float = 13682 # full scale wetted surface，
-    ks: float = 150 * 10 ** - 6
+    Ss: float = 13682 # 不清楚，需要
+    ks: float = 150 * 10 ** - 6 # 需要
 
     g: float = 9.81
-    A_bt: float = 30.8
-    hb: float = 4
+    A_bt: float = 30.8 # transverse sectional area，需要
+    hb: float = 4 # 不太清楚，需要
     C_stern: float = 10 # 根据具体船型取值
-    k2: float = 1.5
-    transom_a: float = 42.6
-    i_E: float = 5.0
+    k2: float = 1.5 # 有经验值，也有复杂计算公式，需要
+    transom_a: float = 42.6  # 不清楚
+    i_E: float = 5.0 # 可通过复杂公式计算
 
-    Sapp: float = 50
-    I: float = 14762925
-    kyy: float = 60.2966
+    Sapp: float = 50 # full scale wetted surface，需要
+    I: float = 14762925 # 不清楚，需要
+    kyy: float = 60.2966 # 不清楚，需要
     A_transverse: float = 41*5 #如何取值
     # A_M:float= 200 #the midship section area under water m2
     SFOC:float=200 #g/kWh ship's fuel efficiency
