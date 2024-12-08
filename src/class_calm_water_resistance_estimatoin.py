@@ -41,7 +41,7 @@ class ShipParam(object):
     hb: float = 4 # 不太清楚，需要
     C_stern: float = 10 # 根据具体船型取值
     k2: float = 1.5 # 有经验值，也有复杂计算公式，需要
-    transom_a: float = 42.6  # 不清楚
+    transom_a: float = 42.6  # 不清楚，需要
     i_E: float = 5.0 # 可通过复杂公式计算
 
     Sapp: float = 50 # full scale wetted surface，需要
