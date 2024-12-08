@@ -47,7 +47,7 @@ class ShipParam(object):
     Sapp: float = 50 # full scale wetted surface，需要
     I: float = 14762925 # 不清楚，需要
     kyy: float = 60.2966 # 不清楚，需要
-    A_transverse: float = 41*5 #如何取值
+    A_transverse: float = 41*5 # 不清楚，需要
     # A_M:float= 200 #the midship section area under water m2
     SFOC:float=200 #g/kWh ship's fuel efficiency
     
