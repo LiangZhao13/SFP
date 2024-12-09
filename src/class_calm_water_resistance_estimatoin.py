@@ -16,22 +16,22 @@ import attr
 @attr.s(frozen=True, auto_attribs=True)
 class ShipParam(object):
     # 几何参数
-    Lwl: float = 235
-    Lpp: float = 230.4
-    B: float = 41.5 # 水线宽度B_wl?
-    Awl: float = 9561.6 # 截面面积，需要
-    Vol: float = 105000  # displacement volume？ 需要
+    Lwl: float = 279.9
+    Lpp: float = 279.9*0.98
+    B: float = 40.3 # 水线宽度B_wl?
+    Awl: float = 279.9*40.3 # 截面面积
+    Vol: float = 87872  # displacement volume
 
     # hull coefficients
-    Cp: float = 0.8467 #知道C_B和C_wp后可算
-    Cm: float = 0.99 # 知道A_m后可算
-    C_B: float = 0.8219 #可算
-    C_wp: float = 0.91 #C_wl, 可算
+    Cp: float = 0.5669 #知道C_B和C_wp后可算
+    Cm: float = 0.98 # 知道A_m后可算
+    C_B: float = 0.5556 #可算0.8219 
+    C_wp: float = 0.6556 #C_wl, 可算
     L_CB: float = -0.75 # 纵向浮心位置，需要
 
     #吃水
-    T: float = 13.1 # 吃水
-    Tf: float = 13.1 # forward draught，与吃水应该应该大致一样
+    T: float =  14.021# 吃水
+    Tf: float = 14.021 # forward draught，与吃水应该应该大致一样
     
     Ss: float = 13682 # 不清楚，需要
     ks: float = 150 * 10 ** - 6 # 需要
@@ -270,11 +270,11 @@ def speed_to_power(v, heading_ship,h_waterdepth,
     r_total = (r_calm) / 1000
     # r_total=r_calm/1000
     etaR = 1.0 # 准确计算较复杂，但整体波动小，经验值是1-1.07或者0.98
-    etaO = 0.52 # 可以算，但需要知道V_A和thruster force T的具体意义，经验值0.55-0.7
+    etaO = 0.60 # 可以算，但需要知道V_A和thruster force T的具体意义，经验值0.55-0.7
     etaS = 0.99 # 无计算公式，取经验值，0.99，0.98，0.95-0.96三种情况
-    etaH = 1.45 # 要计算t, w，1-t/1-w,需要知道力和速度的关系。
+    etaH = 1.1 # 要计算t, w，1-t/1-w,需要知道力和速度的关系。
 
-    P_eff  = r_total * V_water
+    P_eff  = r_total * V_water 
     P_shaft = P_eff / (etaR * etaO * etaS * etaH)
     Fuel_kg_per_hour = P_shaft * ship.SFOC * 1e-3
     Fuel_kg_per_nm   = P_shaft * ship.SFOC * 1e-3 / v / 0.514444
