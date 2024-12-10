@@ -16,17 +16,17 @@ import attr
 @attr.s(frozen=True, auto_attribs=True)
 class ShipParam(object):
     # 几何参数
-    Lwl: float = 279.9
-    Lpp: float = 279.9*0.98
+    Lwl: float = 279.9*0.9
+    Lpp: float = 279.9*0.95
     B: float = 40.3 # 水线宽度B_wl?
-    Awl: float = 279.9*40.3 # 截面面积
+    Awl: float = 10151.973 # Lwl*40.3 # 截面面积
     Vol: float = 87872  # displacement volume
 
-    # hull coefficients
-    Cp: float = 0.5669 #知道C_B和C_wp后可算
+    # hull coefficients 这些值全部取的经验参数
+    Cp: float = 0.69 #知道C_B和C_wp后可算
     Cm: float = 0.98 # 知道A_m后可算
-    C_B: float = 0.5556 #可算0.8219 
-    C_wp: float = 0.6556 #C_wl, 可算
+    C_B: float = 0.72 #可算0.8219 
+    C_wp: float = 0.82 #C_wl, 可算
     L_CB: float = -0.75 # 纵向浮心位置，需要
 
     #吃水
@@ -37,8 +37,8 @@ class ShipParam(object):
     ks: float = 150 * 10 ** - 6 # 需要
 
     g: float = 9.81
-    A_bt: float = 30.8 # transverse sectional area，需要
-    hb: float = 4 # 不太清楚，需要
+    A_bt: float = 30.8 #30.8 # transverse sectional area，需要
+    hb: float = 4 # 4 不太清楚，需要
     C_stern: float = 10 # 根据具体船型取值
     k2: float = 1.5 # 有经验值，也有复杂计算公式，需要
     transom_a: float = 42.6  # 不清楚，需要
