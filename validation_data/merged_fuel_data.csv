@@ -1,4 +1,4 @@
-﻿num,merged_date,Fuel_hour,daily_fuel_mrv
+﻿num,merged_date,Predicted_daily,daily_fuel_mrv
 1,2021-09-23,68.69813998645554,71.43
 1,2021-09-29,66.23606948257012,64.52
 1,2021-10-02,61.03206655596757,62.02
